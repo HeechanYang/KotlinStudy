@@ -43,4 +43,33 @@ fun main(args: Array<String>) {
     }
     println()
 
+    // 특별한 Array Class들
+    // IntArray, ShortArray, LongArray, ...
+    // Primitive type의 boxing 오버헤드를 없애기 위한 배열
+    // Array를 상속한 Class들은 아니지만 같은 메소드와 프로퍼티를 가짐
+    var intArr: IntArray = intArrayOf(1, 2, 3, 4, 5)
+
+    // String
+    // []로 접근 가능
+    // - 하지만 그런 경우 immutable이므로 변경 불가
+    //      - str[0] = 'a' // 오류
+    val str: String = "Kotlin"
+    for (charA in str) {
+        print("${charA} ")
+    }
+    println()
+    for (i in 0..(str.length - 1)) {
+        print("${str[i]} ")
+    }
+    println()
+//    str[0]='a' // 오류
+
+    // String literal
+    // """ """
+    println("""이것은 "문자열"입니다.
+'하하하'
+오 개쩐다
+근데 탭은 없애고 앞으로 붙여줘야하네.""")
+
+
 }

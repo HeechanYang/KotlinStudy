@@ -26,3 +26,5 @@
     - Explicit Conversion
         - 작은 타입은 큰 타입의 하위 타입이 아님
             - 작은 타입에서 큰 타입으로의 대입이 안됨
+    - Object 형태의 Array
+        - 특별한 Array들, IntArray, LongArray, ShortArray, etc....
