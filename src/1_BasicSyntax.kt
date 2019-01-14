@@ -47,7 +47,7 @@ fun min(a: Int, b: Int): Int {
 // Nullable, ?
 fun parseInt(str: String): Int? {
     var result = 0
-    for(c in str){
+    for (c in str) {
 
     }
     return 1
@@ -55,14 +55,14 @@ fun parseInt(str: String): Int? {
 // Nullable END
 
 // 자동 타입 변환
-fun printTypeOf(target : Any) {
-    if(target is Int){
+fun printTypeOf(target: Any) {
+    if (target is Int) {
         println(target.toString() + " is a Int")
-    } else if(target is Double){
+    } else if (target is Double) {
         println(target.toString() + " is a Double")
-    } else if(target is String){
+    } else if (target is String) {
         println(target.toString() + " is a String")
-    } else if(target is Boolean){
+    } else if (target is Boolean) {
         println(target.toString() + " is a Boolean")
     } else {
         println(target.toString() + " is a something else")
@@ -71,36 +71,27 @@ fun printTypeOf(target : Any) {
 // 자동 타입 변환 END
 
 // When 표현
-fun printTypeOf2(target : Any){
-    when(target){
-        1 -> {
-            println(target.toString() + " is One")
-        }
-        "Hello" -> {
-            println(target.toString() + " World!")
-        }
-        is Long -> {
-            println(target.toString() + " is a Long")
-        }
-        is Int -> {
-            println(target.toString() + " is a Int")
-        }
-        else -> {
-            println("ELSE!!")
-        }
+fun printTypeOf2(target: Any) {
+    when (target) {
+        1 -> println(target.toString() + " is One")
+        "Hello" -> println(target.toString() + " World!")
+        is Long -> println(target.toString() + " is a Long")
+        is Int -> println(target.toString() + " is a Int")
+        else -> println("ELSE!!")
+
     }
 }
 // When 표현 END
 
 // Range Start
-fun rangeTest(){
+fun rangeTest() {
     val x = 3
 
-    if(x in 1..10){
+    if (x in 1..10) {
         println("fits in range")
     }
 
-    for(a in 1..5){
+    for (a in 1..5) {
         print("$a ")
     }
     println()
@@ -145,11 +136,11 @@ fun main(args: Array<String>) {
 
     // When 표현 Test
     printTypeOf2(1)
-    val long : Long = 0
+    val long: Long = 0
     printTypeOf2(long)
-    val int : Int = 0
+    val int: Int = 0
     printTypeOf2(int)
-    val boolean : Boolean = false
+    val boolean: Boolean = false
     printTypeOf2(boolean)
     // When 표현 Test End
 
@@ -158,14 +149,14 @@ fun main(args: Array<String>) {
     // Range Test END
 
     // Collections
-    val fruitList = listOf("apple","banana", "kiwi")
-    for(fruit in fruitList){
+    val fruitList = listOf("apple", "banana", "kiwi")
+    for (fruit in fruitList) {
         print("$fruit ")
     }
     println()
 
-    val petTypeSet = setOf("dog","cat", "hamster")
-    for(petType in petTypeSet){
+    val petTypeSet = setOf("dog", "cat", "hamster")
+    for (petType in petTypeSet) {
         print("$petType ")
     }
     println()
