@@ -138,6 +138,5 @@ fun main(args: Array<String>) {
         print("$cnt - $cnt2 /")
     } while (cnt2 > ++cnt)
     println()
-
 }
 

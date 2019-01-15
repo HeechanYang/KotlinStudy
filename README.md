@@ -16,9 +16,11 @@
         - 2진수 - 0b0000101
         - 16진수 - 0x0F
     - Underscores in numeric literals
-        - val oneMillion = 1_000_000
-        - val accountNumber = 356_1234_1234_12
-        - val bytes = 0b00000000_10000000_10000000_10000000
+        ```kotlin
+        val oneMillion = 1_000_000
+        val accountNumber = 356_1234_1234_12
+        val bytes = 0b00000000_10000000_10000000_10000000
+        ```
     - Representation
         - Java 플랫폼에서 숫자형은 JVM primitive type으로 저장됨
         - 그러나 Nullable이나 제네릭의 경우에는 박싱됨
@@ -28,3 +30,18 @@
             - 작은 타입에서 큰 타입으로의 대입이 안됨
     - Object 형태의 Array
         - 특별한 Array들, IntArray, LongArray, ShortArray, etc....
+    - Package
+        - 소스코드 파일의 경로와 package명이 일치하지 않아도 됨
+        - Package를 명시하지 않으면 이름이 없는 기본 패키지에 포함됨.
+            - 그냥 바로 가져다 쓰면 됨
+        - 자동으로 import 되는 기본 패키지들
+            - `kotlin.*`
+            - `kotlin.annotation.*`
+            - `kotlin.collections.*`
+            - `kotlin.io.*`
+            - `kotlin.range.*`
+            - etc....
+    - Import 
+        - `as` keyword를 통해 로컬 리네임 가능
+    - Method
+        - 클래스 밖에 그냥 선언 가능 (C처럼)

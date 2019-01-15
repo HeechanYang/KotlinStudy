@@ -43,6 +43,22 @@ fun main(args: Array<String>) {
     }
     println()
 
+    println("\nArray.foreach(fun)")
+    arr1.forEach(
+            fun(num: Int) {
+                print("$num ")
+            }
+    )
+    println()
+
+    println("\nArray.foreach(lambda)")
+    arr1.forEach {
+        // keyword 'it'!
+        print("$it ")
+    }
+
+    println("\n")
+
     // 특별한 Array Class들
     // IntArray, ShortArray, LongArray, ...
     // Primitive type의 boxing 오버헤드를 없애기 위한 배열
