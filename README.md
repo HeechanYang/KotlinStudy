@@ -117,4 +117,23 @@
                 }
             }
             ```
-        - 
+    - Inheritance
+        - `Java`의 최상위 객체는 `Object`인 반면
+        - `Kotlin`의 최상위 객체는 `Any`
+            - Any가 포함하는 함수
+                - equals()
+                - hashCode()
+                - toString()
+        - open을 해야 다른 클래스가 상속을 할 수 있음
+            - 모든 클래스는 default로 final로 선언됨
+                - 이유는 Effective Java, Item 17: Design and document for inheritance or else prohibit it
+            - open은 final과 반대 개념
+        ```kotlin
+        open class AA
+        
+        class BB : AA()
+        ```
+        - Method override
+        - Property override ??
+    - Abstract Class
+        - 구현이 없는 클래스
