@@ -45,3 +45,76 @@
         - `as` keyword를 통해 로컬 리네임 가능
     - Method
         - 클래스 밖에 그냥 선언 가능 (C처럼)
+    - Class
+        - 구성요소  
+            - ClassName
+            - Head
+            - Body
+                - Constructor and Initialize block
+                - Properties
+                - Functions
+                - Nested and Inner Classes
+                - Object Declaration
+            - Header와 Body는 옵션  
+        ``` 
+        class ClassName [(Header)] [{  
+          Body
+        }]
+        ```
+        ```kotlin
+        class Human(name:String){
+          //Body
+        }
+        ```
+        - Primary Constructor
+            - Class 별로 1개만 가질 수 있음
+            - Header의 일부
+                ```kotlin
+                class Person constructor(firstName: String){}
+                ```
+            - Annotation이나 접근지정자가 없을 경우 `constructor` 생략 가능
+                ```kotlin
+                class Person (firstName: String){}
+                ```
+            - 기본 생성자의 코드는 `init` 블록에 들어감
+                ```kotlin
+                class Person (firstName: String){
+                   init{
+                      //code
+                   }     
+                }
+                ``` 
+            - 프로퍼티 초기화 선언에도 사용 가능
+                ```kotlin
+                class Person (name: String){
+                    val upperCaseName = name.toUpperCase()
+                }
+                ```
+        - Secondary Constructor
+            - Class 별로 여러개를 가질 수 있음
+            ```kotlin
+            class Person2 {
+                var name: String = "Default"
+            
+                constructor()
+            
+                constructor(name: String){
+                    this.name = name
+                }
+            }
+            ```
+            - Class가 Primary Constructor를 가지고 있다면, 각 Secondary Constructor들은 직간접적으로 위임해 줘야 함
+                - 직접적 : 기본 생성자에 위임
+                - 간접적 : 직접적 위임을 하는 다른 보조 생성자에 위임
+            ```kotlin
+            class Person3(val name: String) {
+                // 직접적 위임
+                constructor(name: String, parent: Person3) : this(name) {
+                }
+      
+                // 간접적 위임
+                constructor() : this("default", Person3()) {
+                }
+            }
+            ```
+        - 
