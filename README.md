@@ -161,4 +161,23 @@
                 - custom accessor가 없어야 함
                 - non-null이어야 함
                 - primitive type은 안 됨
+    - Data Class : 데이터만 담는 클래스
+    ```kotlin
+    data class DataClass(val name: String, val address: String) 
+    ```
+        - 기본 생성자에 선언된 속성을 통해 다음 기능들을 컴파일러가 자동으로 생성해줌
+            - equals()
+            - hashCode()
+            - copy()
+            - toString() --> "ClassName(property1=value1, property2=value2)"
+            - componentN(0 functions
+        - 의미 있는 Data class의 조건
+            - 기본 생성자에 1개 이상의 파라미터
+            - 기본 생성자의 파라미터가 var, val로 선언
+            - abstract, open, sealed, inner가 안 됨
+        - 1.1 이후 바뀐 점
+            - interface 구현 가능
+            - Sealed class 상속 가능
+    - Nested Class(중첩클래스)
+        - 
                                 
