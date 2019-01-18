@@ -180,4 +180,19 @@
             - Sealed class 상속 가능
     - Nested Class(중첩클래스)
         - 
+    - Object Expression and Declaration
+        - 용도
+            - 어떤 Class에서 조금만 변경된 객체를 생성할 때
+            - 새로운 subclass의 명시적인 선언 없이 객체 생성
+            - 예
+                - Object Expression
+                    - Java 익명 객체 : Java에서는 익명 내부 클래스를 사용해서 처리했음
+                    ```java 
+                    aBtn.setOnclickListener(new OnClickListener(){...});
+                    ```
+                - Object Declaration
+                    - 싱글턴
+                - Companion Object
+                    - 싱글턴 + Class method (static)
+                    - "Kotlin에는 static method가 없다. 걍 package-level method를 써라" 라고 명시돼 있음
                                 
