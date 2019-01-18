@@ -185,14 +185,18 @@
             - 어떤 Class에서 조금만 변경된 객체를 생성할 때
             - 새로운 subclass의 명시적인 선언 없이 객체 생성
             - 예
-                - Object Expression
+                - Object Expression 
+                    - 즉시 초기화되고 실행 됨
                     - Java 익명 객체 : Java에서는 익명 내부 클래스를 사용해서 처리했음
                     ```java 
                     aBtn.setOnclickListener(new OnClickListener(){...});
                     ```
                 - Object Declaration
+                    - 나중에 초기화 됨 (최초 접근 시)
                     - 싱글턴
                 - Companion Object
+                    - 클래스가 로드될 때 초기화 됨
+                        - java static initializer와 매칭됨
                     - 싱글턴 + Class method (static)
                     - "Kotlin에는 static method가 없다. 걍 package-level method를 써라" 라고 명시돼 있음
                                 

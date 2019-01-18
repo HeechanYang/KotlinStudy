@@ -1,3 +1,6 @@
+import java.awt.event.MouseAdapter
+import java.awt.event.MouseEvent
+
 fun main(args: Array<String>) {
     val t1 = Thread(MyRunnable())
     // Object Expression !
@@ -16,6 +19,15 @@ fun main(args: Array<String>) {
 
     // Singleton using Object Declaration
     SingletonObject.doSomething()
+
+    // Companion Object
+    // MyClass.Factory.create() 할 필요 없음
+    // 함수를 공유한다는 건가?
+    // Static처럼 보일 수 있지만 다름 (이건 뭔소린지 모르겠다 나중에 찾아봐야지)
+    // - companion object의 멤버는 실제 객체의 멤버임
+    // - 슈퍼클래스도 가질 수 있는 클래스의 객체임
+    MyClass.create()
+    MyClass.Factory.create()
 }
 
 // 저 run 메서드 하나 구현하려고 이렇게 class를 따로 만들어야 해?!?!
@@ -47,5 +59,26 @@ class C{
 object SingletonObject{
     fun doSomething(){
         println("SingletonObject.doSomething()")
+    }
+}
+
+// Object Declaration - 상속 가능
+object DefaultListener : MouseAdapter(){
+    override fun mouseClicked(e: MouseEvent?) {
+        super.mouseClicked(e)
+    }
+
+    override fun mouseMoved(e: MouseEvent?) {
+        super.mouseMoved(e)
+    }
+}
+
+// Companion Object
+class MyClass{
+    // companion object의 이름은 생략 가능
+    // ex) companion object {...}
+    // 이럴 경우 ClassName.Companion.xxx로 접근 가능
+    companion object Factory{
+        fun create(): MyClass = MyClass()
     }
 }
