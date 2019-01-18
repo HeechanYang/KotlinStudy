@@ -137,3 +137,28 @@
         - Property override ??
     - Abstract Class
         - 구현이 없는 클래스
+    - Property and Field
+        - Kotlin은 각 Class가 Property를 가질 수 있음
+        ```
+        [var|val] <PropertyNmae>[:<PropertyType>] [=<PropertyInitializer>]
+            [<getter>]
+            [<setter>] 
+        ```
+        - 단, val은 setter가 없음
+        - getter/setter에선 해당 property를 나타내는 field라는 예약어가 쓰임
+        - Late-Initialized Properties
+            - 일반적으로 프로퍼티는 non-null 타입으로 선언됨
+            - 간혹 non-null 타입 프로퍼티를 사용하고 싶지만, 생성자에서 초기화해줄 수 없는 경우가 있음
+                - DI
+                - Butter Knife
+                - Unit test의 setup 메서드
+                - 등
+                - 이럴 경우 lateinit 키워드를 사용!
+            - 조건
+                - 클래스의 바디에서 선언된 프로퍼티만 가능
+                - 기본 생성자에서 선언된 프로퍼티는 불가능
+                - var 프로퍼티만 가능
+                - custom accessor가 없어야 함
+                - non-null이어야 함
+                - primitive type은 안 됨
+                                
